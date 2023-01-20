@@ -1,3 +1,24 @@
+// "ALERT" ELEMENTS =========================================================================
+window.onload = (aC, aT, aBB, count) => {
+    aC = document.querySelector(".alert-circle");
+    aT = document.querySelector(".alert-title");
+    aBB = document.querySelector(".alert-btn_block");
+    count = 0;
+
+    while (count < 500) {
+        aC.style.width = count + "px";
+        aC.style.height = count + "px";
+        count++;
+    }
+
+    if (count === 500) {
+        aT.style.opacity = "1";
+        aBB.style.opacity = "1";
+    }
+}
+
+
+
 // BURGER LINES MENU and DROP-DOWN LIST =====================================================
 const burgerMenuLines = document.querySelector(".burger-menu_lines");
 const burgerMenuElems = document.querySelector(".burger-menu_elems");

@@ -49,9 +49,16 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 500px;
-    height: 500px;
+    width: 0px;
+    height: 0px;
     margin: 20px;
+    transition-duration: 0.5s;
+}
+
+.alert-title,
+.alert-btn_block {
+    opacity: 0;
+    transition-duration: 2s;
 }
 
 @media (max-width: 529px) {
