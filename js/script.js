@@ -65,25 +65,9 @@ function dropDownList() {
     }
 }
 
+window.onresize = dropDownList;
 
 
-
-// CHANGE MAIN IMG and DROP-DOWN LIST=========================================================
-const mainImg = document.querySelector(".main-img");
-
-window.onresize = changeMainImg;
-
-function changeMainImg() {
-    if (window.innerWidth <= 799) {
-        mainImg.src = "images/main-img_mobile.jpg";
-    } else if (window.innerWidth > 799) {
-        mainImg.src = "images/main-img.jpg";
-    }
-
-    dropDownList();
-}
-
-changeMainImg();
 
 
 
