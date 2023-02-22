@@ -36,10 +36,9 @@
     justify-content: center;
     width: 100%;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     z-index: 9999;
     transition-duration: 0.5s;
-    overflow: hidden;
 }
 
 .alert-circle {
@@ -424,6 +423,150 @@ header {
 
 .factions-content {
     display: flex;
+    height: 100vh;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.title-factions {
+    font-size: 80px;
+    margin-left: 85px;
+    letter-spacing: 0.7em;
+}
+
+.factions-link {
+    width: 341px;
+}
+
+.link-area:nth-child(1),
+.link-area:nth-child(2),
+.link-area:nth-child(3) {
+    padding-bottom: 64px;
+}
+
+.link-area:nth-child(4) {
+    padding-bottom: 11px;
+    margin-bottom: 53px;
+}
+
+.link-area {
+    padding-top: 10px;
+    padding-right: 66px;
+    height: 26px;
+    transition-duration: 0.5s;
+}
+
+.area-r {
+    background: url("../images/bg-area-wr.png") no-repeat 302px 0;
+}
+
+.area-l {
+    background: url("../images/bg-area-wl.png") no-repeat 302px 0;
+}
+
+.area-r.active {
+    background: url("../images/bg-area-cr.png") no-repeat 302px 0;
+    padding-bottom: 21px;
+    height: 228px;
+}
+
+.area-l.active {
+    background: url("../images/bg-area-cl.png") no-repeat 302px 0;
+    padding-bottom: 21px;
+    margin-bottom: 0;
+    height: 228px;
+}
+
+.link-area.active .faction-name {
+    text-transform: uppercase;
+    padding-bottom: 18px;
+}
+
+.faction-name {
+    color: #fff;
+    cursor: pointer;
+    font-size: 22px;
+    font-family: ttOctosquares-medium;
+    text-align: end;
+}
+
+.faction-img_link {
+    display: none;
+    position: relative;
+    width: 272px;
+    height: 184px;
+    outline: 2px solid hsla(0, 0%, 100%, 0.4);
+    outline-offset: -2px;
+}
+
+.faction-img_link::before,
+.faction-img_link::after {
+    content: "";
+    position: absolute;
+}
+
+.faction-img_link::before {
+    border-top: 17.5px solid #fff;
+    border-left: 17.5px solid transparent;
+    top: 8px;
+    right: 8px;
+    box-shadow: 3px -3px 0px #000;
+}
+
+.faction-img_link::after {
+    border-bottom: 17.5px solid #fff;
+    border-right: 17.5px solid transparent;
+    bottom: 8px;
+    left: 8px;
+    box-shadow: -3px 3px 0px #000;
+}
+
+.faction-wrap_link {
+    position: absolute;
+    top: 26px;
+    left: -60px;
+}
+
+.back-img1 {
+    background: url("../images/back-link-1.png") no-repeat;
+}
+
+.back-img2 {
+    background: url("../images/back-link-2.png") no-repeat;
+}
+
+.back-img3 {
+    background: url("../images/back-link-3.png") no-repeat;
+}
+
+.back-img4 {
+    background: url("../images/back-link-4.png") no-repeat;
+}
+
+.faction-link {
+    color: #000;
+    display: inline-block;
+    font-size: 16px;
+    font-family: neueMachina-regular;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 18px 42px;
+}
+
+.link-area.active .faction-img_link {
+    display: block;
+    animation-duration: 1s;
+    animation-name: visibl;
+}
+
+@keyframes visibl {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 /* ADAPTIVE ==============================================================================*/

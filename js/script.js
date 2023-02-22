@@ -17,6 +17,38 @@ window.onload = (aC, aT, aBB, count) => {
     }
 }
 
+// alert window
+function alertElem(body, alt, altBtn) {
+    body = document.querySelector("body");
+    body.style.overflow = "hidden";
+    alt = document.querySelector(".alert");
+    altBtn = document.querySelectorAll(".alert-btn");
+
+    function alertNone() {
+        setTimeout(function () {
+            alt.style.opacity = "0";
+            alt.style.transform = "scale(2)";
+        });
+        setTimeout(() => {
+            alt.style.display = "none";
+            body.style.overflow = "auto";
+        }, 500);
+    }
+
+    for (let item of altBtn) {
+        item.addEventListener("click", () => {
+            if (item.classList.contains("alert-yes")) {
+                noise();
+                alertNone();
+            } else if (item.classList.contains("alert-no")) {
+                alertNone();
+            }
+        });
+    }
+}
+
+alertElem();
+
 
 
 // BURGER LINES MENU and DROP-DOWN LIST =====================================================
@@ -72,53 +104,21 @@ window.onresize = dropDownList;
 
 
 
-// SOUND ACCOMPANIMENT OF BUTTONS
-const whitePaper = document.querySelectorAll(".whitepaper");
-const leftLinks = document.querySelectorAll(".left-links");
+// SOUND ACCOMPANIMENT OF BUTTONS =======================================================================
+const mainSound = document.querySelectorAll(".main-sound");
+const soundLink = document.querySelectorAll(".sound-link");
 const icon = document.querySelectorAll(".icon");
-const arr = [whitePaper, leftLinks, icon];
+const arr = [mainSound, soundLink, icon];
 const audio = new Audio();
-
-// alert window
-function alertElem(body, alt, altBtn) {
-    body = document.querySelector("body");
-    body.style.overflow = "hidden";
-    alt = document.querySelector(".alert");
-    altBtn = document.querySelectorAll(".alert-btn");
-
-    function alertNone() {
-        setTimeout(function () {
-            alt.style.opacity = "0";
-            alt.style.transform = "scale(2)";
-        });
-        setTimeout(() => {
-            alt.style.display = "none";
-            body.style.overflow = "auto";
-        }, 500);
-    }
-
-    for (let item of altBtn) {
-        item.addEventListener("click", () => {
-            if (item.classList.contains("alert-yes")) {
-                noise();
-                alertNone();
-            } else if (item.classList.contains("alert-no")) {
-                alertNone();
-            }
-        });
-    }
-}
-
-alertElem();
 
 // sound on functions
 function noise() {
     for (let i = 0; i < arr.length; i++) {
         for (let j = 0; j < arr[i].length; j++) {
             arr[i][j].onmouseenter = () => {
-                if (arr[i] == whitePaper) {
+                if (arr[i] == mainSound) {
                     soundPlay(audio, "audio/off.mp3");
-                } else if (arr[i] == leftLinks || arr[i] == icon) {
+                } else if (arr[i] == soundLink || arr[i] == icon) {
                     soundPlay(audio, "audio/on.mp3");
                 }
             }
@@ -141,4 +141,54 @@ function soundPlay(audio, sound) {
             playing;
         })
     }
+}
+
+
+
+
+
+// SMOOTH LINK NAVIGATION ===============================================================================
+const header = document.querySelector("header");
+const factions = document.querySelector(".factions");
+const roadmap = document.querySelector(".roadmap");
+const leftLinks = document.querySelectorAll(".left-links");
+
+for (let elem of leftLinks) {
+    elem.addEventListener("click", () => {
+        if (elem.getAttribute("data-name") == "home") {
+            header.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        } else if (elem.getAttribute("data-name") == "factions") {
+            factions.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        } else if (elem.getAttribute("data-name") == "roadmap") {
+            roadmap.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }
+    });
+}
+
+
+
+
+
+// FACTIONS MANU ========================================================================================
+const linkArea = document.querySelectorAll(".link-area");
+const factionName = document.querySelectorAll(".faction-name");
+for (let item of factionName) {
+    item.addEventListener("click", () => {
+        for (let elem of linkArea) {
+            if (elem.classList.contains("active")) {
+                elem.classList.remove("active");
+            }
+
+            item.parentElement.classList.add("active");
+        }
+    });
 }
