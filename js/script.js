@@ -147,38 +147,86 @@ function soundPlay(audio, sound) {
 
 
 
-// SMOOTH LINK NAVIGATION ===============================================================================
-const header = document.querySelector("header");
-const factions = document.querySelector(".factions");
-const roadmap = document.querySelector(".roadmap");
+// LINK NAVIGATION ==================================================================================
+const home = document.querySelector(".home-content");
+const factions = document.querySelector(".factions-content");
+const roadmap = document.querySelector(".roadmap-content");
 const leftLinks = document.querySelectorAll(".left-links");
 
+// cursor navigation
+const arrElems = [home, factions, roadmap];
+
+for (let item of arrElems) {
+    item.addEventListener("mouseover", function (e) {
+        if (e.target == item && item == arrElems[0]) {
+            colorLinkHome();
+        } else if (e.target == item && item == arrElems[1]) {
+            colorLinkFactions();
+        } else if (e.target == item && item == arrElems[2]) {
+            colorLinkRoadmap();
+        }
+    });
+}
+
+// click navigation
 for (let elem of leftLinks) {
     elem.addEventListener("click", () => {
         if (elem.getAttribute("data-name") == "home") {
-            header.scrollIntoView({
+            home.scrollIntoView({
                 behavior: "smooth",
                 block: "start"
             });
+            colorLinkHome();
         } else if (elem.getAttribute("data-name") == "factions") {
             factions.scrollIntoView({
                 behavior: "smooth",
                 block: "start"
             });
+            colorLinkFactions()
         } else if (elem.getAttribute("data-name") == "roadmap") {
             roadmap.scrollIntoView({
                 behavior: "smooth",
                 block: "start"
             });
+            colorLinkRoadmap();
         }
     });
+}
+
+// change color links
+function colorLinkHome() {
+    for (let link of leftLinks) {
+        link.style.color = "rgba(255, 255, 255, 0.7)";
+        if (link.getAttribute("data-name") == "home") {
+            link.style.color = "#fff";
+        }
+    }
+}
+
+function colorLinkFactions() {
+    for (let link of leftLinks) {
+        link.style.color = "rgba(255, 255, 255, 0.7)";
+        if (link.getAttribute("data-name") == "factions") {
+            link.style.color = "#fff";
+        }
+    }
+}
+
+function colorLinkRoadmap() {
+    for (let link of leftLinks) {
+        link.style.color = "rgba(255, 255, 255, 0.7)";
+        if (link.getAttribute("data-name") == "roadmap") {
+            link.style.color = "#fff";
+        }
+    }
 }
 
 
 
 
 
-// FACTIONS MANU ========================================================================================
+
+// FACTIONS MENU ========================================================================================
 const linkArea = document.querySelectorAll(".link-area");
 const factionName = document.querySelectorAll(".faction-name");
 for (let item of factionName) {

@@ -110,11 +110,6 @@
     background: #000;
 }
 
-.wrapmax-width {
-    max-width: 1920px;
-    margin: 0 auto;
-}
-
 /* HEADER =====================================================================================*/
 header {
     position: absolute;
@@ -342,7 +337,7 @@ header {
     transform: rotate(90deg);
     position: absolute;
     top: 49%;
-    left: -130px;
+    left: -110px;
 }
 
 .left-links {
@@ -354,9 +349,20 @@ header {
     transition-duration: 0.2s;
 }
 
+p[data-name="home"] {
+    color: #fff;
+}
+/* .left-links_home .left-links:nth-child(1) {
+    color: #fff;
+}
+
+.left-links_factions .left-links:nth-child(3) {
+    color: #fff;
+} */
+
 .left-links:hover {
     cursor: pointer;
-    color: #fff;
+    color: #fff !important;
 }
 
 .star {
@@ -430,12 +436,13 @@ header {
 
 .title-factions {
     font-size: 80px;
-    margin-left: 85px;
+    margin-left: 170px;
     letter-spacing: 0.7em;
 }
 
 .factions-link {
     width: 341px;
+    margin-right: -60px;
 }
 
 .link-area:nth-child(1),
