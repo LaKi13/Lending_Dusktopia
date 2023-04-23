@@ -150,7 +150,7 @@ function soundPlay(audio, sound) {
 // LINK NAVIGATION ==================================================================================
 const home = document.querySelector(".home-content");
 const factions = document.querySelector(".factions-content");
-const roadmap = document.querySelector(".roadmap-content");
+const roadmap = document.querySelector(".roadmap");
 const leftLinks = document.querySelectorAll(".left-links");
 
 // cursor navigation
@@ -240,3 +240,10 @@ for (let item of factionName) {
         }
     });
 }
+
+
+
+
+
+// ROADMAP MENU ==========================================================================================
+const treeBranch = document.querySelectorAll(".tree-branch");

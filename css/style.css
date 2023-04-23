@@ -3,23 +3,27 @@
     src: url("../fonts/NeueMachina-Regular.ttf") format("ttf"), url("../fonts/NeueMachina-Regular.woff") format("woff"),
         url("../fonts/NeueMachina-Regular.woff2") format("woff2");
 }
+
 @font-face {
     font-family: ttOctosquares-regular;
     src: url("../fonts/TTOctosquares-Regular.ttf") format("ttf"),
         url("../fonts/TTOctosquares-Regular.woff") format("woff"),
         url("../fonts/TTOctosquares-Regular.woff2") format("woff2");
 }
+
 @font-face {
     font-family: ttOctosquares-medium;
     src: url("../fonts/TTOctosquares-Medium.ttf") format("ttf"),
         url("../fonts/TTOctosquares-Medium.woff") format("woff"),
         url("../fonts/TTOctosquares-Medium.woff2") format("woff2");
 }
+
 @font-face {
     font-family: mazzard-medium;
     src: url("../fonts/MazzardL-Medium.ttf") format("ttf"), url("../fonts/MazzardL-Medium.woff") format("woff"),
         url("../fonts/MazzardL-Medium.woff2") format("woff2");
 }
+
 @font-face {
     font-family: moveX-bold;
     src: url("../fonts/Move-X-Bold.otf") format("otf");
@@ -107,7 +111,9 @@
 }
 
 .wrapper {
-    background: #000;
+    background: url("../images/bg-landing.jpg") no-repeat;
+    background-size: cover;
+    background-position-y: 4%;
 }
 
 /* HEADER =====================================================================================*/
@@ -190,6 +196,7 @@ header {
     z-index: 1;
     transition-duration: 1s;
 }
+
 /* ================================================================================= */
 
 .main-elems {
@@ -320,6 +327,10 @@ header {
     background: url("../images/main-img.jpg") no-repeat;
     background-size: cover;
     background-position: inherit;
+}
+
+.home,
+.factions {
     height: 100vh;
     position: relative;
 }
@@ -352,6 +363,7 @@ header {
 p[data-name="home"] {
     color: #fff;
 }
+
 /* .left-links_home .left-links:nth-child(1) {
     color: #fff;
 }
@@ -423,8 +435,6 @@ p[data-name="home"] {
     background: url("../images/factions.jpg") no-repeat;
     background-size: cover;
     background-position: inherit;
-    height: 100vh;
-    position: relative;
 }
 
 .factions-content {
@@ -574,6 +584,219 @@ p[data-name="home"] {
     to {
         opacity: 1;
     }
+}
+
+.bg-blure {
+    backdrop-filter: blur(10px);
+    margin-top: -30px;
+    height: 100px;
+}
+
+/* ROADMAP ============================================================================ */
+.roadmap {
+    background: url("../images/pachinko-motel.png") no-repeat;
+    background-position-x: 100%;
+    background-position-y: -1%;
+    padding: 140px 0 140px 158px;
+    position: relative;
+}
+
+.left-links_roadmap {
+    top: 56%;
+    left: -164px;
+}
+
+.before-title {
+    position: relative;
+    margin-left: 90px;
+}
+
+.before-title span {
+    background: url("../images/bordre-decor.png") no-repeat;
+    display: inline-block;
+    width: 162px;
+    height: 14px;
+    position: absolute;
+    bottom: -12px;
+    left: -84px;
+}
+
+.ourway {
+    background: linear-gradient(90deg, #FFB800 0%, #FFBAC3 70.62%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    opacity: 0.95;
+    font-size: 15px;
+    font-family: mazzard-medium;
+    font-weight: 700;
+    width: 70px;
+}
+
+.title-roadmap {
+    font-size: 64px;
+    margin-bottom: 100px;
+}
+
+.title-roadmap span {
+    background: url("../images/dblArrow.png") no-repeat;
+    display: inline-block;
+    margin-top: 50px;
+    padding-right: 15px;
+    width: 40px;
+    height: 40px;
+}
+
+.tree-branch {
+    cursor: pointer;
+    position: relative;
+    width: 371px;
+    height: 115px;
+    margin: 0 auto 0px 10%;
+    padding: 20px 65px 90px 26px;
+    transition-duration: 0.3s;
+}
+
+.branch-numb {
+    color: #fff;
+    font-family: neueMachina-regular;
+    font-size: 40px;
+    margin-bottom: 3px;
+}
+
+.branch-title,
+.branch-description {
+    color: #fff;
+    font-family: mazzard-medium;
+    font-size: 16px;
+    margin-left: 4px;
+    line-height: 140%;
+}
+
+.branch-description {
+    width: 370px;
+}
+
+.marker-bg_01,
+.marker-bg_02,
+.marker-bg_03,
+.marker-bg_04,
+.marker-bg_05 {
+    width: 514px;
+    height: 240px;
+    padding-left: 82px;
+    transition-duration: 0.3s;
+}
+
+.marker-bg_01,
+.marker-bg_01:hover {
+    background: url("../images/roadMap/branch-mc01.png") no-repeat 28px 54px;
+}
+
+.marker-bg_02 {
+    background: url("../images/roadMap/branch-mw02.png") no-repeat 28px -113px;
+}
+
+.marker-bg_02:hover {
+    background: url("../images/roadMap/branch-mc02.png") no-repeat 28px -113px;
+}
+
+.marker-bg_03 {
+    background: url("../images/roadMap/branch-mw03.png") no-repeat 28px -96px;
+}
+
+.marker-bg_03:hover {
+    background: url("../images/roadMap/branch-mc03.png") no-repeat 28px -96px;
+}
+
+.marker-bg_04 {
+    background: url("../images/roadMap/branch-mw02.png") no-repeat 28px -112px;
+}
+
+.marker-bg_04:hover {
+    background: url("../images/roadMap/branch-mc02.png") no-repeat 28px -112px;
+}
+
+.marker-bg_05 {
+    background: url("../images/roadMap/branch-mw04.png") no-repeat 28px -104px;
+}
+
+.marker-bg_05:hover {
+    background: url("../images/roadMap/branch-mc04.png") no-repeat 28px -104px;
+}
+
+.branch-01 {
+    background: url("../images/roadMap/branch-blur01.png") no-repeat;
+}
+
+.branch-01,
+.branch-01:hover {
+    background: url("../images/roadMap/branch-white01.png") no-repeat;
+}
+
+.branch-02 {
+    background: url("../images/roadMap/branch-blur02.png") no-repeat;
+}
+
+.branch-02:hover {
+    background: url("../images/roadMap/branch-white02.png") no-repeat;
+}
+
+.branch-03 {
+    background: url("../images/roadMap/branch-blur03.png") no-repeat;
+}
+
+.branch-03:hover {
+    background: url("../images/roadMap/branch-white03.png") no-repeat;
+}
+
+.branch-04 {
+    background: url("../images/roadMap/branch-blur04.png") no-repeat;
+}
+
+.branch-04:hover {
+    background: url("../images/roadMap/branch-white04.png") no-repeat;
+}
+
+.branch-05 {
+    background: url("../images/roadMap/branch-blur05.png") no-repeat;
+    height: 108px;
+    padding: 22px 65px 0 26px;
+}
+
+.branch-05:hover {
+    background: url("../images/roadMap/branch-white05.png") no-repeat;
+}
+
+.branch-01,
+.tree-branch:hover {
+    width: 424px;
+    height: 129px;
+    padding: 38px 49px 73px 30px;
+}
+
+.branch-01 .branch-numb,
+.tree-branch:hover .branch-numb {
+    color: #000;
+    font-size: 45px;
+}
+
+.branch-01 .branch-title,
+.branch-01 .branch-description {
+    margin-left: 8px;
+}
+
+.branch-01 .branch-title,
+.tree-branch:hover .branch-title {
+    color: #000;
+}
+
+.branch-01 .branch-description,
+.tree-branch:hover .branch-description {
+    color: #000;
+    font-size: 18px;
+    width: 420px;
 }
 
 /* ADAPTIVE ==============================================================================*/
