@@ -678,18 +678,18 @@ p[data-name="home"] {
     width: 370px;
 }
 
-.marker-bg_01,
-.marker-bg_02,
-.marker-bg_03,
-.marker-bg_04,
-.marker-bg_05 {
+.marker-bg {
     width: 514px;
     height: 240px;
     padding-left: 82px;
     transition-duration: 0.3s;
 }
 
-.marker-bg_01,
+.marker-bg_01 {
+    background: url("../images/roadMap/branch-mw01.png") no-repeat 28px 54px;
+}
+
+.marker-bg_01.active,
 .marker-bg_01:hover {
     background: url("../images/roadMap/branch-mc01.png") no-repeat 28px 54px;
 }
@@ -698,6 +698,7 @@ p[data-name="home"] {
     background: url("../images/roadMap/branch-mw02.png") no-repeat 28px -113px;
 }
 
+.marker-bg_02.active,
 .marker-bg_02:hover {
     background: url("../images/roadMap/branch-mc02.png") no-repeat 28px -113px;
 }
@@ -706,6 +707,7 @@ p[data-name="home"] {
     background: url("../images/roadMap/branch-mw03.png") no-repeat 28px -96px;
 }
 
+.marker-bg_03.active,
 .marker-bg_03:hover {
     background: url("../images/roadMap/branch-mc03.png") no-repeat 28px -96px;
 }
@@ -714,6 +716,7 @@ p[data-name="home"] {
     background: url("../images/roadMap/branch-mw02.png") no-repeat 28px -112px;
 }
 
+.marker-bg_04.active,
 .marker-bg_04:hover {
     background: url("../images/roadMap/branch-mc02.png") no-repeat 28px -112px;
 }
@@ -722,6 +725,7 @@ p[data-name="home"] {
     background: url("../images/roadMap/branch-mw04.png") no-repeat 28px -104px;
 }
 
+.marker-bg_05.active,
 .marker-bg_05:hover {
     background: url("../images/roadMap/branch-mc04.png") no-repeat 28px -104px;
 }
@@ -730,7 +734,7 @@ p[data-name="home"] {
     background: url("../images/roadMap/branch-blur01.png") no-repeat;
 }
 
-.branch-01,
+.branch-01.active,
 .branch-01:hover {
     background: url("../images/roadMap/branch-white01.png") no-repeat;
 }
@@ -739,6 +743,7 @@ p[data-name="home"] {
     background: url("../images/roadMap/branch-blur02.png") no-repeat;
 }
 
+.branch-02.active,
 .branch-02:hover {
     background: url("../images/roadMap/branch-white02.png") no-repeat;
 }
@@ -747,6 +752,7 @@ p[data-name="home"] {
     background: url("../images/roadMap/branch-blur03.png") no-repeat;
 }
 
+.branch-03.active,
 .branch-03:hover {
     background: url("../images/roadMap/branch-white03.png") no-repeat;
 }
@@ -755,6 +761,7 @@ p[data-name="home"] {
     background: url("../images/roadMap/branch-blur04.png") no-repeat;
 }
 
+.branch-04.active,
 .branch-04:hover {
     background: url("../images/roadMap/branch-white04.png") no-repeat;
 }
@@ -765,34 +772,37 @@ p[data-name="home"] {
     padding: 22px 65px 0 26px;
 }
 
+.branch-05.active,
 .branch-05:hover {
     background: url("../images/roadMap/branch-white05.png") no-repeat;
 }
 
-.branch-01,
+.tree-branch.active,
 .tree-branch:hover {
     width: 424px;
     height: 129px;
     padding: 38px 49px 73px 30px;
 }
 
-.branch-01 .branch-numb,
+.branch-numb.active,
 .tree-branch:hover .branch-numb {
     color: #000;
     font-size: 45px;
 }
 
-.branch-01 .branch-title,
-.branch-01 .branch-description {
+.branch-title.active,
+.branch-description.active,
+.tree-branch:hover .branch-description,
+.tree-branch:hover .branch-title {
     margin-left: 8px;
 }
 
-.branch-01 .branch-title,
+.branch-title.active,
 .tree-branch:hover .branch-title {
     color: #000;
 }
 
-.branch-01 .branch-description,
+.branch-description.active,
 .tree-branch:hover .branch-description {
     color: #000;
     font-size: 18px;
