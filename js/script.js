@@ -253,24 +253,23 @@ const branchTitle = document.querySelectorAll(".branch-title");
 const branchDesc = document.querySelectorAll(".branch-description");
 
 for (let i = 0; i < markerBg.length; i++) {
-    if (markerBg[i].classList.contains("active") && treeBranch[i].classList.contains("active") &&
-        branchNumb[i].classList.contains("active") && branchTitle[i].classList.contains("active") &&
-        branchDesc[i].classList.contains("active")) {
-
-        function activeElem(marker, tree, numb, title, desc) {
-            marker = markerBg[i].classList.toggle("active");
-            tree = treeBranch[i].classList.toggle("active");
-            numb = branchNumb[i].classList.toggle("active");
-            title = branchTitle[i].classList.toggle("active");
-            desc = branchDesc[i].classList.toggle("active");
+    console.log("one");
+    if (treeBranch[i].classList.contains("active")) {
+        console.log("two");
+        function activeElem() {
+            markerBg[i].classList.toggle("active");
+            treeBranch[i].classList.toggle("active");
+            branchNumb[i].classList.toggle("active");
+            branchTitle[i].classList.toggle("active");
+            branchDesc[i].classList.toggle("active");
         }
 
-        function delActiveElem(marker, tree, numb, title, desc) {
-            marker = markerBg[i].classList.remove("active");
-            tree = treeBranch[i].classList.remove("active");
-            numb = branchNumb[i].classList.remove("active");
-            title = branchTitle[i].classList.remove("active");
-            desc = branchDesc[i].classList.remove("active");
+        function delActiveElem() {
+            markerBg[i].classList.remove("active");
+            treeBranch[i].classList.remove("active");
+            branchNumb[i].classList.remove("active");
+            branchTitle[i].classList.remove("active");
+            branchDesc[i].classList.remove("active");
         }
     }
 
@@ -288,7 +287,6 @@ for (let i = 0; i < markerBg.length; i++) {
         branchNumb[i].classList.add("active");
         branchTitle[i].classList.add("active");
         branchDesc[i].classList.add("active");
-
         delActiveElem();
     });
 }
