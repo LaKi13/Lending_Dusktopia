@@ -252,41 +252,37 @@ const branchNumb = document.querySelectorAll(".branch-numb");
 const branchTitle = document.querySelectorAll(".branch-title");
 const branchDesc = document.querySelectorAll(".branch-description");
 
-for (let i = 0; i < markerBg.length; i++) {
-    console.log("one");
-    if (treeBranch[i].classList.contains("active")) {
-        console.log("two");
-        function activeElem() {
+function activeElem() {
+    for (let i = 0; i < markerBg.length; i++) {
+        if (markerBg[i].getAttribute("data-numb") == "1") {
             markerBg[i].classList.toggle("active");
             treeBranch[i].classList.toggle("active");
             branchNumb[i].classList.toggle("active");
             branchTitle[i].classList.toggle("active");
             branchDesc[i].classList.toggle("active");
         }
+    }
+}
 
-        function delActiveElem() {
-            markerBg[i].classList.remove("active");
-            treeBranch[i].classList.remove("active");
-            branchNumb[i].classList.remove("active");
-            branchTitle[i].classList.remove("active");
-            branchDesc[i].classList.remove("active");
+function del() {
+    for (let i = 0; i < markerBg.length; i++) {
+        if (markerBg[i].getAttribute("data-numb") == "1") {
+            markerBg[i].setAttribute("data-numb", "0");
         }
     }
+}
 
-    treeBranch[i].addEventListener("mouseenter", () => {
+for (let item of treeBranch) {
+    item.addEventListener("mouseenter", () => {
         activeElem();
     });
 
-    treeBranch[i].addEventListener("mouseleave", () => {
+    item.addEventListener("mouseleave", () => {
         activeElem();
     });
 
-    treeBranch[i].addEventListener("click", () => {
-        markerBg[i].classList.add("active");
-        treeBranch[i].classList.add("active");
-        branchNumb[i].classList.add("active");
-        branchTitle[i].classList.add("active");
-        branchDesc[i].classList.add("active");
-        delActiveElem();
+    item.addEventListener("click", () => {
+        del();
+        item.parentElement.setAttribute("data-numb", "1");
     });
 }

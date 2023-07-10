@@ -492,6 +492,14 @@ p[data-name="home"] {
     background: url("../images/bg-area-wl.png") no-repeat 302px 0;
 }
 
+.area-r:hover {
+    background: url("../images/bg-area-cr.png") no-repeat 302px 0;
+}
+
+.area-l:hover {
+    background: url("../images/bg-area-cl.png") no-repeat 302px 0;
+}
+
 .area-r.active {
     background: url("../images/bg-area-cr.png") no-repeat 302px 0;
     padding-bottom: 21px;
